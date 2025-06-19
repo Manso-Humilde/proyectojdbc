@@ -8,7 +8,7 @@ public class Class03BuscadorPlantillaFuncion {
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
         System.out.println("Introduzca la función: ");
-        String idFuncion = teclado.nextLine();
+        String Funcion = teclado.nextLine();
         
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -19,7 +19,7 @@ public class Class03BuscadorPlantillaFuncion {
     // "select APELLIDO, FUNCION, SALARIO from PLANTILLA "
     //+ " where FUNCION='" + funcion + "'";
             String sql = 
-                "select APELLIDO, FUNCION, SALARIO from PLANTILLA " + "where FUNCION='" + idFuncion + "'";
+                "select APELLIDO, FUNCION, SALARIO from PLANTILLA " + "where FUNCION='" + Funcion + "'";
             System.out.println(sql);
             Statement st = cn.createStatement();
             ResultSet rs = st.executeQuery(sql);
