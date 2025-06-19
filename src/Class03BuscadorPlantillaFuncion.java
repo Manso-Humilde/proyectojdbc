@@ -16,8 +16,10 @@ public class Class03BuscadorPlantillaFuncion {
             Connection cn = 
                 DriverManager.getConnection(connectioString, "root", "root");
     //select APELLIDO, FUNCION, SALARIO from PLANTILLA where FUNCION='ENFERMERA';
+    // "select APELLIDO, FUNCION, SALARIO from PLANTILLA "
+    //+ " where FUNCION='" + funcion + "'";
             String sql = 
-                "select APELLIDO, FUNCION, SALARIO from PLANTILLA + where FUNCION=" + idFuncion + '';
+                "select APELLIDO, FUNCION, SALARIO from PLANTILLA " + "where FUNCION='" + idFuncion + "'";
             System.out.println(sql);
             Statement st = cn.createStatement();
             ResultSet rs = st.executeQuery(sql);
